@@ -17,7 +17,7 @@ option.complete = (res) => {
       //  强制清空 token
       localStorage.removeItem("token");
       // 强制跳转到登录页面
-      // location.href = "/login.html"
+      location.href = "/login.html"
   }
 }
   });

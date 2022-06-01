@@ -37,6 +37,7 @@ const renderAvatar = (user) => {
         $(".text-avatar").html(firstName);
     }
 };
+
 // 退出登录
 $("#btnLogout").click(() => {
     layui.layer.confirm(
@@ -51,10 +52,11 @@ $("#btnLogout").click(() => {
     );
 });
 
+
 // 不论成功还是失败，最终都会调用 complete 回调函数
 complete: (res) => {
     // 在 complete 回调函数中，可以使用 res.responseJSON 拿到服务器响应回来的数据
-    if(res.responseJSON.status ===1 && res.responseJSON.message === "身份认证失败！") {
+    if (res.responseJSON.status === 1 && res.responseJSON.message === "身份认证失败！") {
         //  强制清空 token
         localStorage.removeItem("token");
         // 强制跳转到登录页面
